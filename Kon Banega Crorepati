@@ -1,0 +1,104 @@
+ques = [
+    [
+        'Who developed Python Programming Language?', 'Wick van Rossum',
+        'Rasmus Lerdorf', 'Guido van Rossum', 'Niene Stom', 3
+    ],
+    [
+        'Which type of Programming does Python support?',
+        'object-oriented programming', 'structured programming',
+        'functional programming', 'all of the mentioned', 4
+    ],
+    [
+        ' Is Python case sensitive when dealing with identifiers?', 'yes',
+        'no', 'machine dependent', 'none of the mentioned', 1
+    ],
+    [
+        'Which of the following is the correct extension of the Python file?',
+        '.python', '.pl', '.py', '.p', 3
+    ],
+    [
+        ' Is Python code compiled or interpreted?',
+        ' Python code is both compiled and interpreted',
+        ' Python code is neither compiled nor interpreted',
+        'Python code is only compiled', 'Python code is only interpreted', 1
+    ],
+    [
+        'All keywords in Python are in _________', 'Capitalized', 'lower case',
+        'UPPER CASE', 'None of the mentioned', 4
+    ],
+    [
+        'What will be the value of the following Python expression? 4 + 3 % 5',
+        7, 2, 4, 1, 1
+    ],
+    [
+        'Which of the following is used to define a block of code in Python language?',
+        'Indentation', 'key', 'Brackets', 'All of the mentioned', 1
+    ],
+    [
+        'Which keyword is used for function in Python language?', 'Function',
+        'def', 'fun', 'define', 2
+    ],
+    [
+        'Which of the following character is used to give single-line comments in Python?',
+        '//', '#', '!', '/*', 2
+    ],
+    [
+        '''What will be the output of the following Python code?
+  i = 1
+  while True:
+      if i%3 == 0:
+          break
+      print(i)
+
+      i + = 1''', 123, 'error', 12, 'none', 2
+    ],
+    [
+        'What is the order of precedence in python?',
+        'Exponential, Parentheses, Multiplication, Division, Addition, Subtraction',
+        'Exponential, Parentheses, Division, Multiplication, Addition, Subtraction',
+        'Parentheses, Exponential, Multiplication, Division, Subtraction, Addition',
+        ' Parentheses, Exponential, Multiplication, Division, Addition, Subtraction',
+        4
+    ],
+    [
+        '''What will be the output of the following Python code snippet if x=1?
+
+  x<<2''', 4, 2, 1, 8, 1
+    ]
+]
+
+money = 0
+
+level = [
+    1000, 2000, 3000, 5000, 10000, 20000, 40000, 80000, 160000, 320000, 640000,
+    1250000, 2500000, 5000000, 10000000
+]
+
+for i in range(0, len(ques)):
+    question = ques[i]
+    print("\n\nquestion for rs.", level[i])
+    print("Q.", question[0])
+    print("a.", question[1])
+    print("b.", question[2])
+    print("c.", question[3])
+    print("d.", question[4])
+    ans = int(input("\n\nAnswer b/w 1-4 or 0 to quit\n"))
+
+    if (ans == 0):
+        print("quit, you won rs", money)
+        break
+
+    if (ans == question[-1]):
+        print("correct answer, you have won rs.", level[i])
+        if (i == 4):
+            money = 10000
+        elif (i == 9):
+            money = 320000
+        elif (i == 14):
+            money = 10000000
+
+    else:
+        print("Wrong answer")
+        break
+
+print("you won rs", money)
